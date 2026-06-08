@@ -21,10 +21,10 @@ class SimLogger:
     def array(self, name):
         return np.array(self.data[name])
 
-    def plot(self, *names):
+    def plot(self, *names, row_size=4, col_size=3):
         t = self.array("t")
         N = len(names)
-        fig, ax = plt.subplots(N, 1, figsize=(4 * 1, 3 * N))
+        fig, ax = plt.subplots(N, 1, figsize=(row_size * 1, col_size * N))
         for i, name in enumerate(names):
             if N > 1:
                 ax_ = ax[i]
